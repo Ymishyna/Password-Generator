@@ -75,4 +75,14 @@ if (specialChar) {
   theRest = theRest.concat(specialTypes)
   mustHave.push(random(specialTypes))
 }
+  //going to call out answers.length and apply it to the rest array through for loop, logick through for loop will be to randomize theRest array
+  for (let i = 0; i < answers.length; i++) {
+    var restOfThem = random(theRest);
+    final.push(restOfThem)
+  }
+  // replace first entries of final array with must have characters
+  for (let i = 0; i < mustHave.length; i++) {
+    final[i] = mustHave[i]
+  }
+  return final.join("");
 }
