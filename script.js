@@ -50,3 +50,12 @@ console.log(length);
   }
   return answers;
 }
+
+// Define Generated Password function
+function generatePassword(answers) {
+  // Declare arrays based on user answers and length
+  var mustHave = []
+  var theRest = []
+  var final = []
+  console.log(mustHave, theRest, final);
+}
