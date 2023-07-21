@@ -59,19 +59,19 @@ function generatePassword(answers) {
   var final = []
   console.log(mustHave, theRest, final);
 // process each array based on user answers true or false
-if (lower) {
+if (answers.lower) {
   theRest = theRest.concat(lowerCase)
   mustHave.push(random(lowerCase))
 }
-if (upper) {
+if (answers.upper) {
   theRest = theRest.concat(upperCase)
   mustHave.push(random(upperCase))
 }
-if (numeric) {
+if (answers.numeric) {
   theRest = theRest.concat(numericChar)
   mustHave.push(random(numericChar))
 }
-if (specialChar) {
+if (answers.specialChar) {
   theRest = theRest.concat(specialTypes)
   mustHave.push(random(specialTypes))
 }
@@ -86,6 +86,7 @@ if (specialChar) {
   }
   return final.join("");
 }
+
 //Randomize each array to get a character and to be reused
 function random(array) {
   var randomIndex = Math.floor(Math.random() * array.length)
