@@ -86,3 +86,9 @@ if (specialChar) {
   }
   return final.join("");
 }
+//Randomize each array to get a character and to be reused
+function random(array) {
+  var randomIndex = Math.floor(Math.random() * array.length)
+  var randomValue = array[randomIndex]
+  return randomValue
+}
