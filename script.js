@@ -18,3 +18,35 @@ function main() {
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
 }
+
+// function to gather the User input and validate that it meets password criteria
+function userInput() {
+  // Convert the user input to an integer
+  var length = parseInt(prompt("How long do you want your password to be?"));
+console.log(length);
+  // Verify length is a NUMBER (not an NaN) and between 8 and 128
+  if (Number.isNaN(length) || length < 8 || length > 128) {
+    alert("Please enter a number between 8 and 128");
+    return null;
+  }
+
+  var lower = confirm("Click OK to include lowercase character.");
+  var upper = confirm("Click OK to include uppercase character.");
+  var numeric = confirm("Click OK to include numeric characters.");
+  var specialChar = confirm("Click OK to include special characters.");
+
+  // Verify that at least one option was chosen
+  if (lower === false && upper === false && numeric === false && specialChar === false) {
+    alert("Please choose at least one character type.");
+    return null;
+  }
+  // store answers in object
+  var answers = {
+    length: length,
+    lower: lower,
+    upper: upper,
+    numeric: numeric,
+    specialChar: specialChar
+  }
+  return answers;
+}
